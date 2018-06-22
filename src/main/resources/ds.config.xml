@@ -1,0 +1,14 @@
+<ds-config>
+	
+	
+	<pool>
+		<type>oracle</type>
+		<name>acctDF</name>
+		<driver>oracle.jdbc.driver.OracleDriver</driver>
+		<url>jdbc:Oracle:thin:@10.20.16.44:1521:acct</url>
+		<username>acct</username>
+		<password>acct</password>
+		<maxconn>100</maxconn>
+	</pool>
+
+</ds-config>
