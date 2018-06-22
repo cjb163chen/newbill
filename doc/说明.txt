@@ -1,0 +1,17 @@
+
+springboot + mybatis 
+//支持多数据库切换，可以修改为根据路由 自动切换
+// mybatis 直接写的sql,和数据直接转对象，map文件太麻烦。
+//代码暂没考虑 设计模式等。
+打包:mvn
+数据库连接池：druid
+环境 jdk 1.8
+数据库：jdbc:Oracle:thin:@10.20.16.44:1521:acct    acct_sc
+启动:java -jar newbill.jar
+
+//测试查询  查account表acct_id =828003000176 的数据
+http://localhost:8080/account/getAcct?id=828003000176
+//测试修改数据  修改表account表 acct_name 
+http://localhost:8080/account/updateAcct?id=828003000176&acctName=qwe127
+//测试事务性 修改account表acct_Id=828003000176 中acct_name 改为qwe126 同时修改 prod_inst表 prodInstId=294772633 中remark字段 改为qwe126
+http://localhost:8080/test/tranTest?id=828003000176&acctName=qwe126&prodInstId=294772633
